@@ -1,19 +1,18 @@
-var Stack = function(value) {
-	this.first = 0;
-	this.last=0;
+var Stack = function(){
+	this.size = 0;
     this._storage = [];
-    Stack.prototype.add = function(){
+    Stack.prototype.add = function(value){
 
-    	storage[this.first] = this.value;
-    	this.first++    };
+    	this._storage[this.size] = value;
+    	    this.size++   
+             };
 
     Stack.prototype.remove = function() {
-    		if(this.first - this.last > 0){
-    			var x = storage[this.first - this.last-1];
+    		if(this.size > 0){
+    			var x = this._storage[this.size -1];
     			delete x;
-    			this.first --;
+    			this.size --;
     			return x;
     		}
-    		else 
-    			this.last = 0;    };
-    	};
+            
+};
